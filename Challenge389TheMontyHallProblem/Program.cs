@@ -6,7 +6,6 @@ namespace Challenge389TheMontyHallProblem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
