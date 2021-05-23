@@ -6,9 +6,9 @@ namespace Challenge387CaeserCipher
 {
     class Program
     {
-        private const int _asciiOffset = 97;
+        private const string _lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 
-        static void TestWarmup()
+        static void TestCaeserChar()
         {
             List<Tuple<char, int>> toTest = new();
             toTest.Add(new('a', 0));
@@ -16,18 +16,32 @@ namespace Challenge387CaeserCipher
             toTest.Add(new('a', 25));
             toTest.Add(new('a', 26));
             toTest.Add(new('a', 24));
+            toTest.Add(new('A', 0));
 
-            toTest.ForEach(t => Console.WriteLine($"f({ t.Item1 }, { t.Item2 }) => { Warmup(t.Item1, t.Item2) }"));
+
+            toTest.ForEach(t => Console.WriteLine($"f({ t.Item1 }, { t.Item2 }) => { CaeserChar(t.Item1, t.Item2) }"));
         }
 
-        static char Warmup(char letter, int shift)
+        static char CaeserChar(char letter, int shift)
         {
-            int ascii = (int)letter;
-            ascii = ascii - _asciiOffset;
-            ascii = ascii + shift;
-            ascii = ascii % 26;
-            ascii = ascii + _asciiOffset;
-            return (char)(ascii);
+            int pos = _lowerCaseLetters.IndexOf(letter);
+            string lettersToUse = _lowerCaseLetters;
+            if(pos == -1)
+            {
+                lettersToUse = _lowerCaseLetters.ToUpper();
+                pos = lettersToUse.IndexOf(letter);
+            }
+
+            if(pos > -1)
+            {
+                pos = (pos + shift) % 26;
+                return lettersToUse[pos];
+            }
+            else
+            {
+                return letter;
+            }
+            
         }
 
         static string Caesar(string originalStr, int shift)
@@ -35,7 +49,7 @@ namespace Challenge387CaeserCipher
             StringBuilder output = new();
             foreach(var c in originalStr)
             {
-                output.Append(Warmup(c, shift));
+                output.Append(CaeserChar(c, shift));
             }
             return output.ToString();
         }
@@ -49,15 +63,27 @@ namespace Challenge387CaeserCipher
             values.Add(new("fusion", 6, "layout"));
             values.Add(new("dailyprogrammer", 6, "jgorevxumxgsskx"));
             values.Add(new("jgorevxumxgsskx", 20, "dailyprogrammer"));
+            values.Add(new("%", 1, "%"));
 
             values.ForEach(t => Console.WriteLine($"f({ t.Item1 }, { t.Item2 }) => { Caesar(t.Item1, t.Item2) }. " +
                 $"{ Caesar(t.Item1, t.Item2)==t.Item3 }"));
         }
 
+        static void OptionalBonusOne()
+        {
+            List<Tuple<string, int, string>> values = new();
+            values.Add(new("Daily Programmer!", 6, "Jgore Vxumxgsskx!"));
+
+            values.ForEach(t => Console.WriteLine($"f({ t.Item1 }, { t.Item2 }) => { Caesar(t.Item1, t.Item2) }. " +
+                $"{ Caesar(t.Item1, t.Item2) == t.Item3 }"));
+        }
+
         static void Main(string[] args)
         {
-            //TestWarmup();
+            //TestCaeserChar();
             Challenge();
+            Console.WriteLine();
+            OptionalBonusOne();
             Console.ReadLine();
         }
     }
