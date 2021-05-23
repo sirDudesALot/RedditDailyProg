@@ -56,8 +56,13 @@ namespace Challenge389TheMontyHallProblem
 
             IContestant contestant = new Alice();
             Game g = new(contestant);
-            g.RunGame();
-            Console.WriteLine(g.GenerateOutput());
+            for(int ix=0; ix<100; ix++)
+            {
+                g.RunGame();
+                //Console.WriteLine(g.GenerateOutput());
+            }
+
+            Console.WriteLine($"Alice: Games Played: { contestant.TotalGamesPlayed }. Wins: { contestant.TotalWins }. Win Percentage: { contestant.WinPercentage }%.");
             Console.ReadLine();
         }
     }
