@@ -70,15 +70,14 @@ namespace Challenge389TheMontyHallProblem
             HostsDoor = GenerateHostsDoor(Contestant.FirstChoice);
             Contestant.GenerateSecondChoice(HostsDoor);
 
-            Contestant.TotalGamesPlayed++;
-
             if(Contestant.SecondChoice == WinningDoor)
             {
-                Contestant.TotalWins++;
+                Contestant.IncrementTotals(true);
                 return true;
             }
             else
             {
+                Contestant.IncrementTotals(false);
                 return false;
             }
         }
