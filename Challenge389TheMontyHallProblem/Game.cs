@@ -13,7 +13,6 @@ namespace Challenge389TheMontyHallProblem
         public int HostsDoor { get; set; }
         public IContestant Contestant { get; set; }
 
-
         private Random _r = new();
 
         public Game(IContestant contestant, int totalDoors = 3)

@@ -49,20 +49,28 @@ namespace Challenge389TheMontyHallProblem
             }
         }
 
+        static void RunGame(IContestant contestant, int timesToRun)
+        {
+            Game g = new(contestant);
+            for(int ix = 0; ix < timesToRun; ix++)
+            {
+                g.RunGame();
+            }
+        }
+
         static void Main(string[] args)
         {
             //TestGenerateWinningDoor(100000);
             //TestGenerateHostsChoice();
 
             IContestant contestant = new Alice();
-            Game g = new(contestant);
-            for(int ix=0; ix<100; ix++)
-            {
-                g.RunGame();
-                //Console.WriteLine(g.GenerateOutput());
-            }
-
+            RunGame(contestant, 100);
             Console.WriteLine($"Alice: Games Played: { contestant.TotalGamesPlayed }. Wins: { contestant.TotalWins }. Win Percentage: { contestant.WinPercentage }%.");
+
+            contestant = new Bob();
+            RunGame(contestant, 100);
+            Console.WriteLine($"Bob: Games Played: { contestant.TotalGamesPlayed }. Wins: { contestant.TotalWins }. Win Percentage: { contestant.WinPercentage }%.");
+
             Console.ReadLine();
         }
     }
