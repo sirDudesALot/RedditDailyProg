@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Challenge389TheMontyHallProblem
 {
-    public class Bob : IContestant
+    public abstract class Contestant
     {
+        public abstract string Name { get; }
         public int TotalGamesPlayed { get; set; } = 0;
         public int TotalWins { get; set; } = 0;
         public int FirstChoice { get; set; }
@@ -20,14 +21,13 @@ namespace Challenge389TheMontyHallProblem
             }
         }
 
-        public void GenerateFirstChoice(int totalDoors)
+        public virtual void IncrementTotals(bool wonGame)
         {
-            FirstChoice = 1;
-        }
-
-        public void GenerateSecondChoice(int hostsChoice)
-        {
-            SecondChoice = hostsChoice;
+            TotalGamesPlayed++;
+            if(wonGame)
+            {
+                TotalWins++;
+            }
         }
     }
 }
