@@ -75,7 +75,6 @@ namespace Challenge387CaeserCipher
             {
                 return letter;
             }
-
         }
 
         static string Caesar(string originalStr, int shift)

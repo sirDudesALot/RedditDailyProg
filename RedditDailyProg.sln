@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge389TheMontyHallProblem", "Challenge389TheMontyHallProblem\Challenge389TheMontyHallProblem.csproj", "{DB5807F4-E51C-4211-88E2-396977FA0B44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge387CaeserCipher", "Challenge387CaeserCipher\Challenge387CaeserCipher.csproj", "{74DBE2E6-6BAF-4903-8B6E-959F31A4E22B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge387CaeserCipher", "Challenge387CaeserCipher\Challenge387CaeserCipher.csproj", "{74DBE2E6-6BAF-4903-8B6E-959F31A4E22B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge383NecklaceMatching", "Challenge383NecklaceMatching\Challenge383NecklaceMatching.csproj", "{2FDFAD4A-637A-4277-8D60-AAC01269B2B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{74DBE2E6-6BAF-4903-8B6E-959F31A4E22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74DBE2E6-6BAF-4903-8B6E-959F31A4E22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74DBE2E6-6BAF-4903-8B6E-959F31A4E22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FDFAD4A-637A-4277-8D60-AAC01269B2B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FDFAD4A-637A-4277-8D60-AAC01269B2B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FDFAD4A-637A-4277-8D60-AAC01269B2B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FDFAD4A-637A-4277-8D60-AAC01269B2B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
