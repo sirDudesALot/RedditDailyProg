@@ -111,12 +111,22 @@ namespace Challenge383NecklaceMatching
             valuesToTest.ForEach(v => Console.WriteLine($" { v.Item1 } => { Repeats(v.Item1) }(={ v.Item2 }) { Repeats(v.Item1) == v.Item2 }"));
         }
 
+        static void TestWhileLoop()
+        {
+            int ix, iy;
+            while((ix = 0) == 0)
+            {
+
+            }
+        }
+
         static void Main(string[] args)
         {
             Challnege();
             Console.WriteLine();
             OptionalBonusOne();
             Console.ReadLine();
+
         }
     }
 }
