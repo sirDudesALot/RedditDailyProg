@@ -1,4 +1,4 @@
-#  Challenge #389 [Easy] The Monty Hall problem[2021-05-10] Challenge #389 [Easy] The Monty Hall problem
+#  Challenge #389 The Monty Hall problem
 ## Background
 For the purpose of today's challenge, the Monty Hall scenario goes like this:
 
