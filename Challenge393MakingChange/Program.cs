@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Challenge393MakingChange
@@ -15,10 +16,15 @@ namespace Challenge393MakingChange
             1
         };
 
+        private static IEnumerable<int> _sortedDenominations =>
+            (from d in _denominations
+             orderby d descending
+             select d);
+
         static int Change(int changeToGive)
         {
             int totalCoins = 0;
-            foreach(var d in _denominations)
+            foreach(var d in _sortedDenominations)
             {
                 while(changeToGive >= d)
                 {
