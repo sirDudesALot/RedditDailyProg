@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge383NecklaceMatchin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge391TheABACABASequence", "Challenge391TheABACABASequence\Challenge391TheABACABASequence.csproj", "{E927EB49-A02A-41BF-9F0C-165213822F97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge393MakingChange", "Challenge393MakingChange\Challenge393MakingChange.csproj", "{BA57F058-9A29-48FB-BBCC-599B2D36C565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge393MakingChange", "Challenge393MakingChange\Challenge393MakingChange.csproj", "{BA57F058-9A29-48FB-BBCC-599B2D36C565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge395NonogramRow", "Challenge395NonogramRow\Challenge395NonogramRow.csproj", "{EA793441-6F1A-4603-9A38-FAC070ACFA89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BA57F058-9A29-48FB-BBCC-599B2D36C565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA57F058-9A29-48FB-BBCC-599B2D36C565}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA57F058-9A29-48FB-BBCC-599B2D36C565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA793441-6F1A-4603-9A38-FAC070ACFA89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA793441-6F1A-4603-9A38-FAC070ACFA89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA793441-6F1A-4603-9A38-FAC070ACFA89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA793441-6F1A-4603-9A38-FAC070ACFA89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
