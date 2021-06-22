@@ -70,9 +70,6 @@ namespace Challenge392PancakeSort
                 new(new int[] { 0, 1, 2, 3, 4 }, new int[] { 4, 3, 2, 1, 0 }, 5),
                 new(new int[] { 1, 2, 2, 2 }, new int[] { 2, 2, 1, 2 }, 3)
             };
-
-            Console.WriteLine(PrintArray(tests[0].Item1));
-
             tests.ForEach(t =>
                 {
                     CreateArr(t.Item1);
@@ -80,9 +77,6 @@ namespace Challenge392PancakeSort
                     Console.WriteLine($" { PrintArray(t.Item1) } Flipfront({ t.Item3 }) => { PrintArray(t.Item2) } | " +
                         $"Actual: { PrintArray(_arr) } { (AreArraysEqual(t.Item2) ? "Passed" : "Failed")}");
                 });
-
-            Console.WriteLine(PrintArray(tests[0].Item1));
-
         }
 
         static void Main(string[] args)
