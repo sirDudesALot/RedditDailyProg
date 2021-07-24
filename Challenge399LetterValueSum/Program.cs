@@ -52,10 +52,21 @@ namespace Challenge399LetterValueSum
             string bonusChallengeOne = wordList.Where(w => w.Item2 == 319).Select(w => w.Item1).FirstOrDefault();
             Console.WriteLine($"Bonus Challenge 1: { bonusChallengeOne }");
 
-            // Bonus Challenge 1
+            // Bonus Challenge 2
             int bonusChallengeTwo = wordList.Where(w => w.Item2 % 2 == 1).Count();
             Console.WriteLine($"Bonus Challenge 2: { bonusChallengeTwo }");
 
+            // Bonus Challenge 3
+            var bonusChallenge3 = wordList
+                .GroupBy(w => w.Item2)
+                .Select(g => new
+                {
+                    Score = g.Key,
+                    Count = g.Count()
+                })
+                .OrderByDescending(w => w.Count)
+                .FirstOrDefault();
+            Console.WriteLine($"Bonus Challenge 3: { bonusChallenge3.Score } { bonusChallenge3.Count }");
         }
 
         static void Main(string[] args)
