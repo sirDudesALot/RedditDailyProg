@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Challenge399LetterValueSum
@@ -27,10 +28,40 @@ namespace Challenge399LetterValueSum
             tests.ForEach(t => Console.WriteLine($"LetterSum({ t.Item1 }) => { t.Item2 } | Actual Ooutput: { LetterSum(t.Item1) } " +
                 $"{ (t.Item2 == LetterSum(t.Item1) ? "Passed" : "Failed") }"));
         }
+        
+        static List<(string, int)> CreateWordList()
+        {
+            List<(string, int)> wordList = new();
+            string line;
+            using (StreamReader sr = new("wordlist.txt"))
+            {
+                while ((line = sr.ReadLine()) != null)
+                {
+                    wordList.Add((line, LetterSum(line)));
+                }
+            }
+
+            return wordList;
+        }
+
+        static void BonusChallenge()
+        {
+            List<(string, int)> wordList = CreateWordList();
+
+            // Bonus Challenge 1
+            string bonusChallengeOne = wordList.Where(w => w.Item2 == 319).Select(w => w.Item1).FirstOrDefault();
+            Console.WriteLine($"Bonus Challenge 1: { bonusChallengeOne }");
+
+            // Bonus Challenge 1
+            int bonusChallengeTwo = wordList.Where(w => w.Item2 % 2 == 1).Count();
+            Console.WriteLine($"Bonus Challenge 2: { bonusChallengeTwo }");
+
+        }
 
         static void Main(string[] args)
         {
             Challenge();
+            BonusChallenge();
             Console.ReadLine();
         }
     }
